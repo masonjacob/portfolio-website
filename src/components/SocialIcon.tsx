@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -24,14 +24,10 @@ const SocialIcon: React.FC<SocialIconProps> = ({ icon, name, info, direction }) 
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleExpand}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+      style={{ width: isExpanded ? '300px' : '64px' }}
     >
-      <Image 
-        src={icon} 
-        alt={name} 
-        width={0}
-        height={0}
-        className="w-16 h-16" 
-      />
+      <Image src={icon} alt={name} width={64} height={64} />
 
       {isExpanded && (
         <div className={`p-4 ${direction === 'right' ? 'ml-2' : 'mr-2'}`}>
