@@ -1,2 +1,12 @@
 
+.card {
+    height: fit-content;
+    width: fit-content;
+    min-width: 200px; /* Set a minimum width for the card */
+  }
   
+  .card-selected {
+    height: 80vh; /* Customize the height of the selected card */
+    width: 80vw; /* Customize the width of the selected card */
+    min-width: unset; /* Remove the minimum width for selected cards */
+  }

@@ -31,7 +31,8 @@ const CardComponent: React.FC<SocialIconProps> = ({ icon, name, info, direction 
   return (
     <motion.div
       className="rounded-lg bg-slate-900 p-4 cursor-pointer"
-      onClick={() => setIsOpen((isOpen) => !isOpen)}
+      onHoverStart={() => setIsOpen((isOpen) => !isOpen)}
+      onHoverEnd={() => setIsOpen((isOpen) => !isOpen)}
       animate={isOpen ? "open" : "closed"}
       variants={cardVariants}
     >

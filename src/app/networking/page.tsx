@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import SocialIcon from '../../components/SocialIcon';
 import Card from '../../components/Card';
+import Dashboard from '../../components/Dashboard';
 
 const socialIcons = [
   { name: 'Facebook', icon: '/facebook-icon.svg', info: 'Facebook Widget', direction: 1, size: 1 },
@@ -14,9 +15,14 @@ const socialIcons = [
 const SocialIconsPage: React.FC = () => {
   return (
     <>
-    <motion.div 
+              <div className="bg-gray-900 text-white w-1/2 p-8">
+              <h1 className="text-4xl font-bold mb-8">Dashboard</h1>
+              <p>This is the left half of the page with big bold text.</p>
+            </div>
+            <div className="bg-gray-100 w-1/2 p-8 grid grid-cols-2 grid-rows-2 gap-4">
+            <motion.div 
     className="justify-center"
-    >
+    > 
     {socialIcons.map((socialIcon, index) => (
         <motion.div
           drag
@@ -24,7 +30,7 @@ const SocialIconsPage: React.FC = () => {
           //whileHover={{ scale: 1.1 }}
           className="col-span-3 flex"
         >
-          <Card 
+          <Card
             key={socialIcon.name} 
             icon={socialIcon.icon} 
             name={socialIcon.name} 
@@ -34,6 +40,9 @@ const SocialIconsPage: React.FC = () => {
         </motion.div>
       ))}
     </motion.div>
+            </div>
+
+    
     </>
   );
 };
