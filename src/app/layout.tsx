@@ -3,12 +3,13 @@ import './globals.css'
 import VerticalNavbar from '@/components/VerticalNavbar'
 import Dropdown from '@/components/Dropdown'
 import { Inter } from 'next/font/google'
+import NavigationBar from '@/components/NavigationBar'
 
 const inter = Inter({ subsets: ['latin'] })
-export const metadata = {
-  title: 'Mason Jacob',
-  description: 'My Portfolio Website',
-}
+// export const metadata = {
+//   title: 'Mason Jacob',
+//   description: 'My Portfolio Website',
+// }
 
 const pages = [
   { route: '/', title: '' },
@@ -40,7 +41,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <VerticalNavbar pages={pages}/>
+        {/* <VerticalNavbar pages={pages}/> */}
+        <NavigationBar/>
         <Dropdown options={options}/>
         {children}
         </body>
